@@ -293,84 +293,105 @@ export default function HomeHero() {
   );
 
   const renderSlides = (
-    <Stack
-      direction="row"
-      alignItems="flex-start"
-      sx={{
-        height: '150%',
-        position: 'absolute',
-        opacity: opacity > 0 ? opacity : 0,
-        transform: `skew(${-16 - percent / 24}deg, ${4 - percent / 16}deg)`,
-        ...(theme.direction === 'rtl' && {
-          transform: `skew(${16 + percent / 24}deg, ${4 + percent / 16}deg)`,
-        }),
-      }}
-    >
-      <Stack
-        component={m.div}
-        variants={varFade().in}
-        sx={{
-          width: 344,
-          position: 'relative',
-        }}
-      >
-        <Box
-          component={m.img}
-          animate={{ y: ['0%', '100%'] }}
-          transition={transition}
-          alt={isLight ? 'light_1' : 'dark_1'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_1.webp`
-              : `/assets/images/home/hero/dark_1.webp`
-          }
-          sx={{ position: 'absolute', mt: -5 }}
-        />
-        <Box
-          component={m.img}
-          animate={{ y: ['-100%', '0%'] }}
-          transition={transition}
-          alt={isLight ? 'light_1' : 'dark_1'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_1.webp`
-              : `/assets/images/home/hero/dark_1.webp`
-          }
-          sx={{ position: 'absolute' }}
-        />
-      </Stack>
+    // <Stack
+    //   direction="row"
+    //   alignItems="flex-start"
+    //   sx={{
+    //     height: '150%',
+    //     position: 'absolute',
+    //     opacity: opacity > 0 ? opacity : 0,
+    //     transform: `skew(${-16 - percent / 24}deg, ${4 - percent / 16}deg)`,
+    //     ...(theme.direction === 'rtl' && {
+    //       transform: `skew(${16 + percent / 24}deg, ${4 + percent / 16}deg)`,
+    //     }),
+    //   }}
+    // >
+    //   <Stack
+    //     component={m.div}
+    //     variants={varFade().in}
+    //     sx={{
+    //       width: 344,
+    //       position: 'relative',
+    //     }}
+    //   >
+    //     <Box
+    //       component={m.img}
+    //       animate={{ y: ['0%', '100%'] }}
+    //       transition={transition}
+    //       alt={isLight ? 'light_1' : 'dark_1'}
+    //       src={
+    //         isLight
+    //           ? `/assets/images/home/hero/light_1.webp`
+    //           : `/assets/images/home/hero/dark_1.webp`
+    //       }
+    //       sx={{ position: 'absolute', mt: -5 }}
+    //     />
+    //     <Box
+    //       component={m.img}
+    //       animate={{ y: ['-100%', '0%'] }}
+    //       transition={transition}
+    //       alt={isLight ? 'light_1' : 'dark_1'}
+    //       src={
+    //         isLight
+    //           ? `/assets/images/home/hero/light_1.webp`
+    //           : `/assets/images/home/hero/dark_1.webp`
+    //       }
+    //       sx={{ position: 'absolute' }}
+    //     />
+    //   </Stack>
 
-      <Stack
-        component={m.div}
-        variants={varFade().in}
-        sx={{ width: 720, position: 'relative', ml: -5 }}
-      >
-        <Box
-          component={m.img}
-          animate={{ y: ['100%', '0%'] }}
-          transition={transition}
-          alt={isLight ? 'light_2' : 'dark_2'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_2.webp`
-              : `/assets/images/home/hero/dark_2.webp`
-          }
-          sx={{ position: 'absolute', mt: -5 }}
-        />
-        <Box
-          component={m.img}
-          animate={{ y: ['0%', '-100%'] }}
-          transition={transition}
-          alt={isLight ? 'light_2' : 'dark_2'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_2.webp`
-              : `/assets/images/home/hero/dark_2.webp`
-          }
-          sx={{ position: 'absolute' }}
-        />
-      </Stack>
-    </Stack>
+    //   <Stack
+    //     component={m.div}
+    //     variants={varFade().in}
+    //     sx={{ width: 720, position: 'relative', ml: -5 }}
+    //   >
+    //     <Box
+    //       component={m.img}
+    //       animate={{ y: ['100%', '0%'] }}
+    //       transition={transition}
+    //       alt={isLight ? 'light_2' : 'dark_2'}
+    //       src={
+    //         isLight
+    //           ? `/assets/images/home/hero/light_2.webp`
+    //           : `/assets/images/home/hero/dark_2.webp`
+    //       }
+    //       sx={{ position: 'absolute', mt: -5 }}
+    //     />
+    //     <Box
+    //       component={m.img}
+    //       animate={{ y: ['0%', '-100%'] }}
+    //       transition={transition}
+    //       alt={isLight ? 'light_2' : 'dark_2'}
+    //       src={
+    //         isLight
+    //           ? `/assets/images/home/hero/light_2.webp`
+    //           : `/assets/images/home/hero/dark_2.webp`
+    //       }
+    //       sx={{ position: 'absolute' }}
+    //     />
+    //   </Stack>
+    // </Stack>
+    <div style={{ marginTop: 80 }}>
+      {/* <img
+      src="https://i.imgur.com/9RSMzLm.png"
+      alt=""
+      style={{ width: 1200, objectFit: 'contain' }}
+    /> */}
+      <div style={{ marginRight: 30, marginTop: -60, marginBottom: -40 }}>
+        <video width="580" height="460" autoPlay loop muted>
+          <source src="https://i.imgur.com/18LJnI5.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {/* <h1 style={{ color: 'white' }}>Hello</h1> */}
+      {/* <video width="640" height="480">
+      <source
+        src="https://drive.google.com/file/d/1hBOVhxJX0Ak9oM9Yw_wnGwNSQYs865mK/view"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video> */}
+    </div>
   );
 
   const renderPolygons = (
