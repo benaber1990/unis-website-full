@@ -11,7 +11,7 @@ import { PATH_AFTER_LOGIN } from 'src/config-global';
 export default function LoginButton({ sx }) {
   return (
     // <Button component={RouterLink} href={PATH_AFTER_LOGIN} variant="outlined" sx={{ mr: 1, ...sx }}>
-    <Button component={RouterLink} href="/" variant="outlined" sx={{ mr: 1, ...sx }}>
+    <Button component={RouterLink} href="/auth/firebase/login" variant="outlined" sx={{ mr: 1, ...sx }}>
       Login
     </Button>
   );
