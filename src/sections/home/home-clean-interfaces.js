@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 // components
 import Image from 'src/components/image';
 import { MotionViewport, varFade } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
@@ -24,8 +25,14 @@ export default function HomeCleanInterfaces() {
       }}
     >
       <m.div variants={varFade().inUp}>
-        <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          UNIS Compliance
+        <Typography
+          component="div"
+          variant="overline"
+          sx={{
+            color: COLORS.dark,
+          }}
+        >
+          AI-Powered App & Software
         </Typography>
       </m.div>
 
@@ -39,7 +46,7 @@ export default function HomeCleanInterfaces() {
                 : `4px 4px 16px ${alpha(theme.palette.grey[800], 0.48)}`,
           }}
         >
-          From HR to project management & compliance, UNIS has you covered
+          ONE PLACE TO MANAGE YOUR CONSTRUCTION COMPANY
         </Typography>
       </m.div>
     </Stack>
@@ -71,10 +78,14 @@ export default function HomeCleanInterfaces() {
   );
 
   return (
-    <Container
-      component={MotionViewport}
-      sx={{
-        py: { xs: 10, md: 15 },
+    <div
+      style={{
+        paddingLeft: 220,
+        paddingRight: 220,
+        marginTop: -120,
+        paddingTop: 30,
+        paddingBottom: 60,
+        background: `linear-gradient(to bottom, ${COLORS.purple}, black)`,
       }}
     >
       {renderDescription}
@@ -84,6 +95,6 @@ export default function HomeCleanInterfaces() {
         style={{ borderRadius: 120, padding: 40 }}
       />
       {/* {renderContent} */}
-    </Container>
+    </div>
   );
 }

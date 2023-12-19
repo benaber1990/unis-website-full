@@ -40,6 +40,8 @@ export default function Header() {
       <Toolbar
         disableGutters
         sx={{
+          backgroundColor: '#000',
+          // background: 'rgba(0, 0, 0, 0.0)',
           height: {
             xs: HEADER.H_MOBILE,
             md: HEADER.H_DESKTOP,
@@ -50,7 +52,7 @@ export default function Header() {
           }),
           ...(offsetTop && {
             ...bgBlur({
-              color: theme.palette.background.default,
+              // color: theme.palette.background.default,
             }),
             height: {
               md: HEADER.H_DESKTOP_OFFSET,

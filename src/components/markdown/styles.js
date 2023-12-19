@@ -48,7 +48,7 @@ const StyledMarkdown = styled('div')(({ theme }) => {
       fontSize: '1.5em',
       margin: '40px auto',
       position: 'relative',
-      fontFamily: 'Georgia, serif',
+      fontFamily: 'Poppins, serif',
       padding: theme.spacing(3, 3, 3, 8),
       color: theme.palette.text.secondary,
       borderRadius: theme.shape.borderRadius * 2,

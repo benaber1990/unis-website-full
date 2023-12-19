@@ -12,6 +12,7 @@ import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 import { useSettingsContext } from 'src/components/settings';
 import { MotionViewport, varFade } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +25,7 @@ export default function HomeColorPresets() {
   }));
 
   const renderDescription = (
-    <Stack spacing={3} sx={{ textAlign: 'center' }}>
+    <Stack spacing={3} sx={{ textAlign: 'center', marginTop: -40 }}>
       <m.div variants={varFade().inDown}>
         <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
           UNIS COMPLIANCE
@@ -37,7 +38,8 @@ export default function HomeColorPresets() {
 
       <m.div variants={varFade().inDown}>
         <Typography sx={{ color: 'text.secondary' }}>
-          UNIS is designed by engineers for engineers - <br />
+          <span style={{ color: COLORS.green, fontWeight: '700' }}>UNIS</span> is designed by
+          engineers for engineers - <br />
           so it works the way you want it to
         </Typography>
       </m.div>

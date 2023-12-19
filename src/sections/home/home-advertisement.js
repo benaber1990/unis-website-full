@@ -12,6 +12,7 @@ import { paths } from 'src/routes/paths';
 // components
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
@@ -32,8 +33,7 @@ export default function HomeAdvertisement() {
         variants={varFade().inDown}
         sx={{ color: 'common.white', mb: 5, typography: 'h2' }}
       >
-        Get started with
-        <br /> UNIS kit today
+        Unlock the Power of UNIS Today
       </Box>
 
       <Stack
@@ -102,8 +102,8 @@ export default function HomeAdvertisement() {
         sx={{
           ...bgGradient({
             direction: '135deg',
-            startColor: theme.palette.primary.main,
-            endColor: theme.palette.primary.dark,
+            startColor: COLORS.purple,
+            endColor: COLORS.purple,
           }),
           borderRadius: 2,
           pb: { xs: 5, md: 0 },

@@ -42,6 +42,7 @@ import Label from 'src/components/label';
 import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
@@ -88,17 +89,12 @@ export default function HomeHugePackElements() {
         textAlign: { xs: 'center', md: 'unset' },
         pl: { md: 5 },
         pt: { md: 15 },
+        marginLeft: -20,
       }}
     >
       <m.div variants={varFade().inUp}>
-        <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          UNIS Compliance
-        </Typography>
-      </m.div>
-
-      <m.div variants={varFade().inUp}>
-        <Typography variant="h2" sx={{ my: 3 }}>
-          Effortlessly Manage Your Projects
+        <Typography variant="h2" sx={{ my: 3, marginTop: -5 }}>
+          Communicate, Track & Manage <span style={{ color: COLORS.green }}>Effortlessly</span>
         </Typography>
       </m.div>
 
@@ -106,11 +102,15 @@ export default function HomeHugePackElements() {
         <Typography
           sx={{
             mb: 5,
-            color: 'text.secondary',
+            color: 'white',
+            fontSize: 18,
           }}
         >
-          We collected most popular elements. Menu, sliders, buttons, inputs etc. are all here. Just
-          dive in!
+          Say goodbye to jumping between software and hello to handling your construction company
+          from one place.
+          <br />
+          <br /> We’ve packed all of the most important areas of construction into one simple-to-use
+          dashboard & app software
         </Typography>
       </m.div>
 
@@ -449,6 +449,7 @@ export default function HomeHugePackElements() {
     <Container
       component={MotionViewport}
       sx={{
+        marginTop: -20,
         py: { xs: 10, md: 15 },
       }}
     >
@@ -461,12 +462,12 @@ export default function HomeHugePackElements() {
           {renderContent}
         </Grid> */}
 
-        <Grid xs={12} md={7}>
+        <Grid xs={6} md={7}>
           {/* {renderContent} */}
           <img
-            src="https://i.imgur.com/KewCOFa.jpg"
+            src="https://i.imgur.com/aCKOWWH.png"
             alt=""
-            style={{ marginTop: 100, borderRadius: 40 }}
+            style={{ marginTop: 100, borderRadius: 40, marginLeft: -100 }}
           />
         </Grid>
 

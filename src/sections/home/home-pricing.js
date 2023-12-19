@@ -20,6 +20,7 @@ import { _homePlans } from 'src/_mock';
 // components
 import Iconify from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
@@ -34,21 +35,16 @@ export default function HomePricing() {
 
   const renderDescription = (
     <Stack spacing={3} sx={{ mb: 10, textAlign: 'center' }}>
-      <m.div variants={varFade().inUp}>
-        <Typography component="div" variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
-          pricing plans
-        </Typography>
-      </m.div>
-
       <m.div variants={varFade().inDown}>
         <Typography variant="h2">
-          The right solution for <br /> your business
+          Unlock the power of <span style={{ color: COLORS.green }}>UNIS</span> today & organise
+          your company with one platform
         </Typography>
       </m.div>
 
       <m.div variants={varFade().inDown}>
         <Typography sx={{ color: 'text.secondary' }}>
-          Choose the perfect plan for your needs
+          Our AI-powered tools are made to support all areas of your construction management
         </Typography>
       </m.div>
     </Stack>
@@ -119,7 +115,7 @@ export default function HomePricing() {
 
           <m.div variants={varFade().inDown}>
             <Typography sx={{ mt: 2, mb: 5, color: 'text.secondary' }}>
-              Speak to a team member today to find out how UNIS can help you
+              Speak to a team member today to find out how
             </Typography>
           </m.div>
 
@@ -133,20 +129,7 @@ export default function HomePricing() {
     </>
   );
 
-  return (
-    <Box
-      sx={{
-        py: { xs: 10, md: 15 },
-        bgcolor: (theme) => alpha(theme.palette.grey[500], 0.04),
-      }}
-    >
-      <Container component={MotionViewport}>
-        {renderDescription}
-
-        {renderContent}
-      </Container>
-    </Box>
-  );
+  return <Box />;
 }
 
 // ----------------------------------------------------------------------

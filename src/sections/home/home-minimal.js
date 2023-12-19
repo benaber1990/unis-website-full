@@ -8,24 +8,25 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 // components
 import { MotionViewport, varFade } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
 const CARDS = [
   {
     icon: ' /assets/icons/home/ic_make_brand.svg',
-    title: 'Compliance',
-    description: "Stay on top of compliance with real-time access to all your team's credentials",
+    title: 'Fast',
+    description: 'Find, edit & send everything you need from one place - on mobile app & desktop',
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'Organisation',
-    description: 'Track the progress of your team and projects on one simple-to-use dashboard',
+    title: 'Simple',
+    description: 'By people in construction for people in construction. We have you in mind',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Management',
-    description: 'Save time managing the most important areas of your company in one place',
+    title: 'Secure',
+    description: 'Robust leading-edge technology to keep you on track when you need it most',
   },
 ];
 
@@ -34,8 +35,9 @@ const CARDS = [
 export default function HomeMinimal() {
   return (
     <Container
-      component={MotionViewport}
+      // component={MotionViewport}
       sx={{
+        width: '100%',
         py: { xs: 10, md: 15 },
       }}
     >
@@ -46,15 +48,9 @@ export default function HomeMinimal() {
           mb: { xs: 5, md: 10 },
         }}
       >
-        <m.div variants={varFade().inUp}>
-          <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-            UNIS Compliance
-          </Typography>
-        </m.div>
-
         <m.div variants={varFade().inDown}>
           <Typography variant="h2">
-            How does UNIS <br /> help you?
+            ACCOMPLISH MORE WITH <span style={{ color: COLORS.green }}>UNIS</span>
           </Typography>
         </m.div>
       </Stack>

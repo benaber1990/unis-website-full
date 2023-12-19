@@ -138,6 +138,8 @@ export default function AmplifyRegisterView() {
         }}
       />
 
+      {/* CREATE ACCOUNT BUTTON IMPORTANT */}
+      {/* 
       <LoadingButton
         fullWidth
         color="inherit"
@@ -147,7 +149,7 @@ export default function AmplifyRegisterView() {
         loading={isSubmitting}
       >
         Create account
-      </LoadingButton>
+      </LoadingButton> */}
     </Stack>
   );
 

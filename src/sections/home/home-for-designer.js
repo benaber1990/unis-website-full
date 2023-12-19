@@ -15,6 +15,7 @@ import { paths } from 'src/routes/paths';
 // components
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
@@ -24,25 +25,22 @@ export default function HomeForDesigner() {
   const mdUp = useResponsive('up', 'md');
 
   const renderDescription = (
-    <Box sx={{ textAlign: { xs: 'center', md: 'unset' }, mt: { xs: 10, md: 20 } }}>
-      <m.div variants={varFade().inUp}>
-        <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          Professional Kit
-        </Typography>
-      </m.div>
-
+    <Box
+      sx={{ textAlign: { xs: 'center', md: 'unset' }, mt: { xs: 10, md: 20 }, marginBottom: 10 }}
+    >
       <m.div variants={varFade().inUp}>
         <Typography
           variant="h2"
           sx={{
+            // textShadowColor: 'red',
+            // textShadowOffset: { width: -3, height: 3 },
+            // textShadowRadius: 10,
             mt: 3,
             mb: 5,
-            ...textGradient(
-              `300deg, ${theme.palette.primary.main} 0%, ${theme.palette.warning.main} 100%`
-            ),
+            ...textGradient(`300deg, ${COLORS.purple} 10%, ${COLORS.green} 90%`),
           }}
         >
-          Real-Time App Integration
+          All You Need On The Move with Real-Time App Integration
         </Typography>
       </m.div>
 
@@ -88,13 +86,14 @@ export default function HomeForDesigner() {
         overflow: 'hidden',
         position: 'relative',
         ...bgGradient({
-          startColor: `${theme.palette.grey[900]} 25%`,
-          endColor: alpha(theme.palette.grey[900], 0),
+          startColor: `${'red'}`,
+          endColor: COLORS.purple,
           imgUrl: '/assets/images/home/for_designer.webp',
         }),
         ...(mdUp && {
           ...bgGradient({
-            color: alpha(theme.palette.background.default, 0.8),
+            startColor: 'black',
+            endColor: COLORS.purple,
             imgUrl: '/assets/background/overlay_4.jpg',
           }),
         }),

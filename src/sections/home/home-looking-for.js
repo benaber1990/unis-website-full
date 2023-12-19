@@ -81,7 +81,8 @@ export default function HomeLookingFor() {
 
         <Grid xs={12} md={7}>
           <m.div variants={varFade().inUp}>
-            <Image disabledEffect alt="rocket" src="/assets/images/home/zone_landing.webp" />
+            {/* <Image disabledEffect alt="rocket" src="/assets/images/home/zone_landing.webp" /> */}
+            <img src="https://i.imgur.com/r5jRqRb.png" alt="" />
           </m.div>
         </Grid>
 

@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'src/components/image';
 import { useSettingsContext } from 'src/components/settings';
 import { MotionViewport, varFade } from 'src/components/animate';
+import COLORS from 'src/COLORS';
 
 // ----------------------------------------------------------------------
 
@@ -26,8 +27,8 @@ export default function HomeDarkMode() {
 
       <m.div variants={varFade().inUp}>
         <Typography variant="h2" sx={{ color: 'common.white' }}>
-          UNIS uses the latest technology <br />
-          to power your team
+          REQUEST, RESPOND & REPORT AT THE{' '}
+          <span style={{ color: COLORS.purple }}>TOUCH OF A BUTTON</span>
         </Typography>
       </m.div>
 
@@ -66,9 +67,17 @@ export default function HomeDarkMode() {
         {/* {renderImg} */}
 
         <img
-          src="https://i.imgur.com/f4SITSe.png"
+          src="https://i.imgur.com/RggB0pF.png"
           alt=""
-          style={{ height: '80%', borderRadius: 40 }}
+          style={{
+            borderRadius: 40,
+            objectFit: 'contain',
+            // resize: 'contain',
+            height: 800,
+            marginTop: 50,
+            marginBottom: 120,
+            border: `2px solid ${COLORS.green}`,
+          }}
         />
       </Container>
     </Box>

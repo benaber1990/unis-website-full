@@ -2423,6 +2423,11 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.1.tgz"
   integrity sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==
 
+"@fontsource/poppins@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.0.8.tgz"
+  integrity sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==
+
 "@fullcalendar/core@^6.1.8", "@fullcalendar/core@~6.1.8":
   version "6.1.8"
   resolved "https://registry.npmjs.org/@fullcalendar/core/-/core-6.1.8.tgz"

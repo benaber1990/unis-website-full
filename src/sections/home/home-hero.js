@@ -22,6 +22,28 @@ import { HEADER } from 'src/layouts/config-layout';
 import Iconify from 'src/components/iconify';
 import { RouterLink } from 'src/routes/components';
 import { MotionContainer, varFade } from 'src/components/animate';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/poppins/900.css';
+import COLORS from 'src/COLORS';
+// import {
+//   getAuth,
+//   signOut,
+//   signInWithPopup,
+//   onAuthStateChanged,
+//   GoogleAuthProvider,
+//   GithubAuthProvider,
+//   TwitterAuthProvider,
+//   sendEmailVerification,
+//   sendPasswordResetEmail,
+//   signInWithEmailAndPassword,
+//   createUserWithEmailAndPassword,
+// } from 'firebase/auth';
+// import { getFirestore, collection, doc, getDoc, setDoc } from 'firebase/firestore';
+// // config
+// import { FIREBASE_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
@@ -44,6 +66,7 @@ const StyledWrapper = styled('div')(({ theme }) => ({
   height: '100%',
   overflow: 'hidden',
   position: 'relative',
+  background: `radial-gradient(circle at 50% 0%, #000 70%, ${COLORS.purple})`,
   [theme.breakpoints.up('md')]: {
     marginTop: HEADER.H_DESKTOP_OFFSET,
   },
@@ -51,20 +74,89 @@ const StyledWrapper = styled('div')(({ theme }) => ({
 
 const StyledTextGradient = styled(m.h1)(({ theme }) => ({
   ...textGradient(
-    `300deg, ${theme.palette.primary.main} 0%, ${theme.palette.warning.main} 25%, ${theme.palette.primary.main} 50%, ${theme.palette.warning.main} 75%, ${theme.palette.primary.main} 100%`
+    `300deg, ${COLORS.green} 0%, ${'#5a3c97'} 25%, ${'green'} 50%, ${'#41149a'} 75%, ${
+      COLORS.purple
+    } 100%`
   ),
   padding: 0,
-  marginTop: 8,
-  lineHeight: 1,
-  marginBottom: 24,
-  letterSpacing: 8,
+  // marginTop: 8,
+  lineHeight: 1.2,
+  // marginBottom: 24,
+  marginBottom: 12,
+  letterSpacing: 2,
   textAlign: 'center',
   backgroundSize: '400%',
-  fontSize: `${64 / 16}rem`,
-  fontFamily: "'Barlow', sans-serif",
-  [theme.breakpoints.up('md')]: {
-    fontSize: `${96 / 16}rem`,
+  fontSize: '80px',
+  '@media (max-width: 600px)': {
+    fontSize: '48px', // Adjust the font size for smaller screens
   },
+  fontWeight: '900',
+  fontFamily: 'Poppins, sans-serif',
+  [theme.breakpoints.up('md')]: {
+    fontSize: 64,
+    // fontSize: `${96 / 16}rem`,
+  },
+}));
+
+const WhiteTextSpan = styled(m.h1)(({ theme }) => ({
+  ...textGradient(
+    `300deg, ${'#ffffff'} 0%, ${'#ffffff'} 25%, ${'#ffffff'} 50%, ${'#ffffff'} 75%, ${'#ffffff'} 100%`
+  ),
+  padding: 0,
+  // marginTop: 8,
+  lineHeight: 1.4,
+  marginBottom: 0,
+  letterSpacing: 2,
+  fontWeight: '900',
+  textAlign: 'center',
+  backgroundSize: '400%',
+  fontSize: '80px',
+  '@media (max-width: 600px)': {
+    fontSize: '48px', // Adjust the font size for smaller screens
+  },
+  fontFamily: 'Poppins, sans-serif',
+  [theme.breakpoints.up('md')]: {
+    // fontSize: `${96 / 16}rem`,
+    fontSize: 64,
+  },
+}));
+
+const SmallWhiteTextSpan = styled(m.p)(({ theme }) => ({
+  ...textGradient(
+    `300deg, ${'#ffffff'} 0%, ${'#ffffff'} 25%, ${'#ffffff'} 50%, ${'#ffffff'} 75%, ${'#ffffff'} 100%`
+  ),
+  padding: 0,
+  // marginTop: 8,
+  lineHeight: 1.4,
+  marginBottom: 0,
+  letterSpacing: 0,
+  fontWeight: '500',
+  // textAlign: 'center',
+  backgroundSize: '400%',
+  color: 'red',
+  fontSize: 32,
+  fontFamily: 'Poppins, sans-serif',
+  [theme.breakpoints.up('md')]: {
+    // fontSize: `${96 / 16}rem`,
+    fontSize: 32,
+  },
+}));
+
+const SmallPurpleTextStyle = styled(m.p)(({ theme }) => ({
+  ...textGradient(`300deg, ${'red'} 0%, ${'red'} 25%, ${'red'} 50%, ${'red'} 75%, ${'red'} 100%`),
+
+  lineHeight: 1.4,
+  marginBottom: 0,
+  letterSpacing: 0,
+  fontWeight: '500',
+  // textAlign: 'center',
+  alignSelf: 'flex-start',
+  backgroundSize: '400%',
+  fontSize: 12,
+  fontFamily: 'Poppins, sans-serif',
+  // [theme.breakpoints.up('md')]: {
+  //   fontSize: 12,
+  // },
 }));
 
 const StyledEllipseTop = styled('div')(({ theme }) => ({
@@ -94,7 +186,8 @@ const StyledEllipseBottom = styled('div')(({ theme }) => ({
 const StyledPolygon = styled('div')(({ opacity = 1, anchor = 'left', theme }) => ({
   ...bgBlur({
     opacity,
-    color: theme.palette.background.default,
+    // color: theme.palette.background.default,
+    color: '#000',
   }),
   zIndex: 9,
   bottom: 0,
@@ -120,6 +213,36 @@ const StyledPolygon = styled('div')(({ opacity = 1, anchor = 'left', theme }) =>
 // ----------------------------------------------------------------------
 
 export default function HomeHero() {
+  const [isHovered, setIsHovered] = useState(false);
+  const [findIsHover, setFindIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const handleMouseEnter2 = () => {
+    setFindIsHovered(true);
+  };
+
+  const handleMouseLeave2 = () => {
+    setFindIsHovered(false);
+  };
+
+  // Email Sign Up
+  const [email, setEmail] = useState('');
+
+  const handleInputChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   const mdUp = useResponsive('up', 'md');
 
   const theme = useTheme();
@@ -167,8 +290,8 @@ export default function HomeHero() {
       justifyContent="center"
       sx={{
         height: 1,
-        mx: 'auto',
-        maxWidth: 480,
+        // mx: 'auto',
+        // maxWidth: 480,
         opacity: opacity > 0 ? opacity : 0,
         mt: {
           md: `-${HEADER.H_DESKTOP + percent * 2.5}px`,
@@ -176,14 +299,14 @@ export default function HomeHero() {
       }}
     >
       <m.div variants={varFade().in}>
-        <Typography
+        {/* <Typography
           variant="h2"
           sx={{
             textAlign: 'center',
           }}
         >
           Fast. Simple. Secure
-        </Typography>
+        </Typography> */}
       </m.div>
 
       <m.div variants={varFade().in}>
@@ -196,18 +319,28 @@ export default function HomeHero() {
             repeat: Infinity,
           }}
         >
-          UNIS
+          <WhiteTextSpan>Construction management</WhiteTextSpan>
+          in One Place
         </StyledTextGradient>
       </m.div>
 
-      <m.div variants={varFade().in}>
-        <Typography variant="body2" sx={{ textAlign: 'center', fontSize: 16, fontWeight: '700' }}>
-          All you need to manage your construction company in one place - wherever you are
-        </Typography>
-      </m.div>
+      <div
+        style={{
+          fontSize: '28px',
+          '@media (max-width: 600px)': {
+            fontSize: '28px', // Adjust the font size for smaller screens
+          },
+          color: 'lightgrey',
+          fontWeight: '700',
+          textAlign: 'center',
+        }}
+      >
+        An <span style={{ color: COLORS.purple }}>AI-Powered</span> app & software for everything
+        from conception to completion
+      </div>
 
       <m.div variants={varFade().in}>
-        <Stack
+        {/* <Stack
           spacing={0.75}
           direction="row"
           alignItems="center"
@@ -221,178 +354,119 @@ export default function HomeHero() {
             </Box>
             (99+ reviews)
           </Typography>
-        </Stack>
+        </Stack> */}
       </m.div>
 
-      <m.div variants={varFade().in}>
-        <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ mb: 5 }}>
-          <Stack alignItems="center" spacing={2}>
-            <Button
-              component={RouterLink}
-              href={paths.contact}
-              color="inherit"
-              size="large"
-              variant="contained"
-              startIcon={<Iconify icon="eva:flash-fill" width={24} />}
-            >
-              Unlock UNIS
-            </Button>
+      <div style={{ height: 60 }} />
 
-            <Link
-              color="inherit"
-              variant="caption"
-              target="_blank"
-              rel="noopener"
-              href={paths.contact}
-              sx={{
-                textDecoration: 'underline',
-                display: 'inline-flex',
-                alignItems: 'center',
+      <div
+        style={{
+          height: 4,
+          background: `linear-gradient(to right, ${COLORS.green}, ${COLORS.purple})`,
+          width: 1200,
+        }}
+      />
+
+      <div style={{ height: 60 }} />
+
+      <div style={{ display: 'flex' }}>
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            paddingTop: 10,
+            paddingBottom: 10,
+            width: 200,
+            borderRadius: 6,
+            marginRight: 10,
+            cursor: 'pointer',
+            textAlign: 'center',
+            fontWeight: '700',
+            background: isHovered ? COLORS.purple : 'white',
+            color: isHovered ? 'white' : COLORS.dark,
+            border: isHovered ? `2px solid ${COLORS.purple}` : `2px solid white`,
+            transition: 'background-color 0.3s, color 0.3s, border 0.3s', //
+          }}
+        >
+          Book a Demo
+        </div>
+        <div
+          onMouseEnter={handleMouseEnter2}
+          onMouseLeave={handleMouseLeave2}
+          style={{
+            paddingTop: 10,
+            paddingBottom: 10,
+            width: 200,
+            borderRadius: 6,
+            marginLeft: 10,
+            cursor: 'pointer',
+            textAlign: 'center',
+            fontWeight: '700',
+            backgroundColor: findIsHover ? COLORS.purple : '',
+            color: findIsHover ? 'white' : 'white',
+            border: findIsHover ? `2px solid ${COLORS.purple}` : `2px solid ${COLORS.purple}`,
+            transition: 'background-color 0.3s, color 0.3s, border 0.3s', //
+          }}
+        >
+          Find Out More
+        </div>
+      </div>
+
+      <div>
+        <form
+          onSubmit={handleSubmit}
+          style={{ display: 'flex', marginTop: 30, alignItems: 'flex-end' }}
+        >
+          <label htmlFor="emailInput">
+            <input
+              type="email"
+              value={email}
+              onChange={handleInputChange}
+              placeholder="Enter your email address"
+              required
+              style={{
+                height: 50,
+                width: 350,
+                paddingLeft: 20,
+                borderTopLeftRadius: 8,
+                borderBottomLeftRadius: 8,
+                backgroundColor: 'white',
+                margin: '0', // Adjust margin as needed
+                fontSize: '18px', // Adjust font size as needed
+                outline: 'none', // Remove outline on focus
+                border: 'none',
               }}
-            >
-              <Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />
-              Speak to a Team Member Today
-            </Link>
-          </Stack>
-
-          <Button
-            color="inherit"
-            size="large"
-            variant="outlined"
-            startIcon={<Iconify icon="eva:external-link-fill" width={24} />}
-            target="_blank"
-            rel="noopener"
-            href={paths.contact}
-            sx={{ borderColor: 'text.primary' }}
+            />
+          </label>
+          <button
+            style={{
+              border: 'none',
+              // width: 140,
+              paddingLeft: 30,
+              paddingRight: 30,
+              marginLeft: -3,
+              height: 50,
+              backgroundColor: COLORS.purple,
+              color: 'inherit',
+              font: 'inherit',
+              cursor: 'pointer',
+              outline: 'none',
+              fontSize: '16px',
+              borderBottomRightRadius: 8,
+              borderTopRightRadius: 8,
+              fontWeight: '700',
+            }}
+            type="submit"
           >
-            Book a Demo
-          </Button>
-        </Stack>
-      </m.div>
-
-      <Stack spacing={3} sx={{ textAlign: 'center' }}>
-        <m.div variants={varFade().in}>
-          <Typography variant="overline" sx={{ opacity: 0.4 }}>
-            Available For
-          </Typography>
-        </m.div>
-
-        <Stack spacing={2} direction="row" justifyContent="center">
-          {['figma', 'js', 'ts', 'nextjs', 'vite'].map((platform) => (
-            <m.div key={platform} variants={varFade().in}>
-              <Box
-                component="img"
-                src={`/assets/icons/platforms/ic_${platform}.svg`}
-                sx={{ width: 24, height: 24 }}
-              />
-            </m.div>
-          ))}
-        </Stack>
-      </Stack>
+            Send Me Info
+          </button>
+        </form>
+      </div>
+      <m.div variants={varFade().in} />
     </Stack>
   );
 
-  const renderSlides = (
-    // <Stack
-    //   direction="row"
-    //   alignItems="flex-start"
-    //   sx={{
-    //     height: '150%',
-    //     position: 'absolute',
-    //     opacity: opacity > 0 ? opacity : 0,
-    //     transform: `skew(${-16 - percent / 24}deg, ${4 - percent / 16}deg)`,
-    //     ...(theme.direction === 'rtl' && {
-    //       transform: `skew(${16 + percent / 24}deg, ${4 + percent / 16}deg)`,
-    //     }),
-    //   }}
-    // >
-    //   <Stack
-    //     component={m.div}
-    //     variants={varFade().in}
-    //     sx={{
-    //       width: 344,
-    //       position: 'relative',
-    //     }}
-    //   >
-    //     <Box
-    //       component={m.img}
-    //       animate={{ y: ['0%', '100%'] }}
-    //       transition={transition}
-    //       alt={isLight ? 'light_1' : 'dark_1'}
-    //       src={
-    //         isLight
-    //           ? `/assets/images/home/hero/light_1.webp`
-    //           : `/assets/images/home/hero/dark_1.webp`
-    //       }
-    //       sx={{ position: 'absolute', mt: -5 }}
-    //     />
-    //     <Box
-    //       component={m.img}
-    //       animate={{ y: ['-100%', '0%'] }}
-    //       transition={transition}
-    //       alt={isLight ? 'light_1' : 'dark_1'}
-    //       src={
-    //         isLight
-    //           ? `/assets/images/home/hero/light_1.webp`
-    //           : `/assets/images/home/hero/dark_1.webp`
-    //       }
-    //       sx={{ position: 'absolute' }}
-    //     />
-    //   </Stack>
-
-    //   <Stack
-    //     component={m.div}
-    //     variants={varFade().in}
-    //     sx={{ width: 720, position: 'relative', ml: -5 }}
-    //   >
-    //     <Box
-    //       component={m.img}
-    //       animate={{ y: ['100%', '0%'] }}
-    //       transition={transition}
-    //       alt={isLight ? 'light_2' : 'dark_2'}
-    //       src={
-    //         isLight
-    //           ? `/assets/images/home/hero/light_2.webp`
-    //           : `/assets/images/home/hero/dark_2.webp`
-    //       }
-    //       sx={{ position: 'absolute', mt: -5 }}
-    //     />
-    //     <Box
-    //       component={m.img}
-    //       animate={{ y: ['0%', '-100%'] }}
-    //       transition={transition}
-    //       alt={isLight ? 'light_2' : 'dark_2'}
-    //       src={
-    //         isLight
-    //           ? `/assets/images/home/hero/light_2.webp`
-    //           : `/assets/images/home/hero/dark_2.webp`
-    //       }
-    //       sx={{ position: 'absolute' }}
-    //     />
-    //   </Stack>
-    // </Stack>
-    <div style={{ marginTop: 80 }}>
-      {/* <img
-      src="https://i.imgur.com/9RSMzLm.png"
-      alt=""
-      style={{ width: 1200, objectFit: 'contain' }}
-    /> */}
-      <div style={{ marginRight: 30, marginTop: -60, marginBottom: -40 }}>
-        <video width="580" height="460" autoPlay loop muted>
-          <source src="https://i.imgur.com/18LJnI5.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      {/* <h1 style={{ color: 'white' }}>Hello</h1> */}
-      {/* <video width="640" height="480">
-      <source
-        src="https://drive.google.com/file/d/1hBOVhxJX0Ak9oM9Yw_wnGwNSQYs865mK/view"
-        type="video/mp4"
-      />
-      Your browser does not support the video tag.
-    </video> */}
-    </div>
-  );
+  const renderSlides = <div style={{ marginTop: 80 }} />;
 
   const renderPolygons = (
     <>
@@ -422,7 +496,7 @@ export default function HomeHero() {
       >
         <StyledWrapper>
           <Container component={MotionContainer} sx={{ height: 1 }}>
-            <Grid container columnSpacing={{ md: 10 }} sx={{ height: 1 }}>
+            <Grid style={{ marginTop: 160 }}>
               <Grid xs={12} md={6}>
                 {renderDescription}
               </Grid>
